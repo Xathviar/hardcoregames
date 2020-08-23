@@ -9,5 +9,8 @@
         <module name="hardcoregames" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hardcoregames" target="7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
