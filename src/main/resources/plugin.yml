@@ -1,0 +1,13 @@
+name: Hardcoregame
+version: 1.0
+author: xathviar, Laserlord, Nzxtime
+main: com.github.xathviar.mc.hardcoregames.Main
+description: Hardcoregames 1.7.9 pogU
+
+commands:
+  kit:
+    aliases: [kit]
+    description: this command is used to select your kit.
+  start:
+    aliases: [start]
+    descriptio: starts the HG Game
