@@ -91,6 +91,25 @@ public class Listener implements org.bukkit.event.Listener {
 
     @EventHandler
     public void onWorldPopulate(ChunkPopulateEvent event) {
-        Chunk chunk = event.getChunk();
+        Chunk c = event.getChunk();
+        World w = c.getWorld();
+        int cx = c.getX() << 4;
+        int cz = c.getZ() << 4;
+        for (int x = cx; x < cx + 16; x++) {
+            for (int z = cz; z < cz + 16; z++) {
+                for (int y = 0; y < 128; y++) {
+                    if ((w.getBlockAt(x, y, z).getType() == Material.DIRT
+                            || w.getBlockAt(x, y, z).getType() == Material.SAND
+                            || w.getBlockAt(x, y, z).getType() == Material.GRASS)
+                            && w.getBlockAt(x, y + 1, z).getType() == Material.AIR) {
+                        if (Math.random() < 0.125) {
+                            w.getBlockAt(x, y + 1, z).setType(Material.RED_MUSHROOM);
+                        } else if (Math.random() < 0.25) {
+                            w.getBlockAt(x, y + 1, z).setType(Material.BROWN_MUSHROOM);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
