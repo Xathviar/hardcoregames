@@ -5,6 +5,7 @@ import com.github.xathviar.mc.hardcoregames.HardCoreGame;
 import com.github.xathviar.mc.hardcoregames.Kit;
 import com.github.xathviar.mc.hardcoregames.Main;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -29,7 +30,19 @@ public class NinjaListener implements org.bukkit.event.Listener {
                 if (e.isDead()) {
                     f.setLastTarget(null);
                 }
-                p.teleport(e.getLocation());
+                double newX;
+                double newZ;
+                float nang = e.getLocation().getYaw() + 90;
+
+                if (nang < 0) nang += 360;
+
+                newX = Math.cos(Math.toRadians(nang));
+                newZ = Math.sin(Math.toRadians(nang));
+
+                Location newLocation = new Location(e.getLocation().getWorld(), e.getLocation().getX() - newX,
+                        e.getLocation().getY(), e.getLocation().getZ() - newZ, e.getLocation().getYaw(), e.getLocation().getPitch());
+
+                p.teleport(newLocation);
                 f.setOnCooldown(true);
                 Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                     @Override
