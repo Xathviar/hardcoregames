@@ -1,9 +1,6 @@
 package com.github.xathviar.mc.hardcoregames.listener;
 
-import com.github.xathviar.mc.hardcoregames.Fighter;
-import com.github.xathviar.mc.hardcoregames.HardCoreGame;
-import com.github.xathviar.mc.hardcoregames.Kit;
-import com.github.xathviar.mc.hardcoregames.Main;
+import com.github.xathviar.mc.hardcoregames.*;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,20 +21,25 @@ public class NinjaListener implements org.bukkit.event.Listener {
         } else if (event.isSneaking()) {
             final Player p = event.getPlayer();
             final Fighter f = HardCoreGame.getFighter(p);
-            if (f.getKit() == Kit.NINJA && f.getLastTarget() != null && !f.isOnCooldown()) {
-                Player e = f.getLastTarget().getPlayer();
-                if (e.isDead()) {
-                    f.setLastTarget(null);
-                }
-                p.teleport(e.getLocation());
-                f.setOnCooldown(true);
-                Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
-                    @Override
-                    public void run() {
-                        f.setOnCooldown(false);
+            if (f.getKit() == Kit.NINJA && f.getLastTarget() != null) {
+                if (!f.isOnCooldown()) {
+                    Player e = f.getLastTarget().getPlayer();
+                    if (e.isDead()) {
+                        f.setLastTarget(null);
                     }
-                }, f.getKit().getKitCooldown());
+                    p.teleport(e.getLocation());
+                    f.setOnCooldown(true);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+                        @Override
+                        public void run() {
+                            f.setOnCooldown(false);
+                        }
+                    }, f.getKit().getKitCooldown());
+                } else {
+                    HelperClass.sendMessage(p, "Your skill is still on cooldown!");
+                }
             }
+
         }
     }
 
