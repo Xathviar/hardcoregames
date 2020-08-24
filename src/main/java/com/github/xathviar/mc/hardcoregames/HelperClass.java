@@ -6,6 +6,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HelperClass {
 
     public static void sendMessage(Player player, String message) {
@@ -35,6 +38,17 @@ public class HelperClass {
         breakAdjacentBlocks(world.getBlockAt(l.getBlockX() + 1, l.getBlockY(), l.getBlockZ()), material);
         breakAdjacentBlocks(world.getBlockAt(l.getBlockX(), l.getBlockY(), l.getBlockZ() + 1), material);
         breakAdjacentBlocks(world.getBlockAt(l.getBlockX(), l.getBlockY(), l.getBlockZ() - 1), material);
+    }
+
+    public static List<Player> getNearbyPlayers(Player player) {
+        List<Player> players = new ArrayList<>();
+        for (Fighter fighter : HardCoreGame.getFighters()) {
+            System.out.println(fighter.getPlayer().getLocation().distance(player.getLocation()));
+            if (fighter.getPlayer().getLocation().distance(player.getLocation()) <= 2 && !fighter.getPlayer().equals(player)) {
+                players.add(fighter.getPlayer());
+            }
+        }
+        return players;
     }
 }
 

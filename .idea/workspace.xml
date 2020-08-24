@@ -24,17 +24,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="Ninja and Anchor fix">
+    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="fixfixfix 100%">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/StomperListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HardCoreGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HardCoreGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HelperClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HelperClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/KitSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/KitSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/AnchorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/AnchorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/NinjaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/NinjaListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HardCoreGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HardCoreGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Kit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Kit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Listener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HelperClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HelperClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/KitSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/KitSelector.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,7 @@
       <updated>1598225647305</updated>
       <workItem from="1598225650919" duration="1626000" />
       <workItem from="1598267745179" duration="7913000" />
-      <workItem from="1598289314442" duration="7847000" />
+      <workItem from="1598289314442" duration="9418000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed small bug...">
       <created>1598225981524</created>
@@ -112,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598297442469</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixfixfix 100%">
+      <created>1598298602085</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598298602085</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,13 +144,14 @@
     <MESSAGE value="minor udpates" />
     <MESSAGE value="minor updates lol" />
     <MESSAGE value="Ninja and Anchor fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ninja and Anchor fix" />
+    <MESSAGE value="fixfixfix 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixfixfix 100%" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598296934422">
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598299438416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598296934422" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598299438416" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1598225692694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

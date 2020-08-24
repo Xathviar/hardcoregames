@@ -2,14 +2,11 @@ package com.github.xathviar.mc.hardcoregames;
 
 import org.bukkit.entity.Player;
 
-import java.util.Collections;
-import java.util.HashSet;
-
-import java.util.Set;
+import java.util.*;
 
 public class HardCoreGame {
     private static boolean isRunning = false;
-    private static final Set<Fighter> fighters = Collections.synchronizedSet(new HashSet<Fighter>());
+    private static final List<Fighter> fighters = Collections.synchronizedList(new ArrayList<>());
 
     public static boolean isRunning() {
         return isRunning;
@@ -48,7 +45,11 @@ public class HardCoreGame {
 
     public static void soutFighters() {
         for (Fighter fighter : fighters) {
-            System.out.println(fighter.getPlayer().getDisplayName() + fighter.getKit().name().toLowerCase());
+            System.out.println(fighter.getPlayer().getDisplayName() + " " + fighter.getKit().name().toLowerCase());
         }
+    }
+
+    public static List<Fighter> getFighters() {
+        return fighters;
     }
 }

@@ -27,7 +27,7 @@ public class AnchorListener implements org.bukkit.event.Listener {
             Fighter f2 = HardCoreGame.getFighter(d);
             if (f.getKit() == Kit.ANCHOR || f2.getKit() == Kit.ANCHOR) {
                 Bukkit.getScheduler().scheduleSyncDelayedTask(main, () -> {
-                    p.playSound(p.getLocation(), Sound.ANVIL_LAND, 5, 0);
+                    p.getWorld().playSound(p.getLocation(), Sound.ANVIL_LAND, 5, 0);
                     p.setVelocity(new Vector(0, 0, 0));
                 }, 1);
             }

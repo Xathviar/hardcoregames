@@ -30,13 +30,13 @@ public class NinjaListener implements org.bukkit.event.Listener {
                     f.setLastTarget(null);
                 }
                 p.teleport(e.getLocation());
+                f.setOnCooldown(true);
                 Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
                     @Override
                     public void run() {
-                        f.setOnCooldown(true);
+                        f.setOnCooldown(false);
                     }
                 }, f.getKit().getKitCooldown());
-                f.setOnCooldown(false);
             }
         }
     }
@@ -48,6 +48,7 @@ public class NinjaListener implements org.bukkit.event.Listener {
                     && event.getEntity() instanceof Player && HardCoreGame.getFighter((Player) event.getDamager()).getKit() == Kit.NINJA) {
                 HardCoreGame.getFighter((Player) event.getDamager()).setLastTarget(HardCoreGame.getFighter((Player) event.getEntity()));
             }
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 }
