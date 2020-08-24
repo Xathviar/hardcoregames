@@ -46,17 +46,7 @@ public class NinjaListener implements org.bukkit.event.Listener {
                     public void run() {
                         f.setOnCooldown(false);
                     }
-                    p.teleport(e.getLocation());
-                    f.setOnCooldown(true);
-                    Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
-                        @Override
-                        public void run() {
-                            f.setOnCooldown(false);
-                        }
-                    }, f.getKit().getKitCooldown());
-                } else {
-                    HelperClass.sendMessage(p, "Your skill is still on cooldown!");
-                }
+                }, f.getKit().getKitCooldown());
             }
 
         }
