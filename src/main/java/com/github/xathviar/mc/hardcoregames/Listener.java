@@ -7,6 +7,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerAchievementAwardedEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
@@ -119,5 +120,10 @@ public class Listener implements org.bukkit.event.Listener {
         if (!HardCoreGame.isRunning()) {
             event.setCancelled(true);
         }
+    }
+
+    @EventHandler
+    public void achievement(PlayerAchievementAwardedEvent event) {
+        event.setCancelled(true);
     }
 }

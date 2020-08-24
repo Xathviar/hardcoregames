@@ -25,7 +25,7 @@ public class Main extends JavaPlugin {
         soups1.addIngredient(1, Material.BOWL);
         soups1.addIngredient(1, Material.CACTUS);
         soups2.addIngredient(1, Material.BOWL);
-        soups2.addIngredient(1, Material.COCOA);
+        soups2.addIngredient(1, Material.INK_SACK, 3);
         Bukkit.addRecipe(soups1);
         Bukkit.addRecipe(soups2);
     }
