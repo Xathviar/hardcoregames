@@ -27,8 +27,8 @@ public class HelperClass {
         Bukkit.getServer().broadcastMessage(ChatColor.AQUA + "[HG] " + ChatColor.RESET + message);
     }
 
-    public static void kitCooldownMessage(int cooldown) {
-        Bukkit.getServer().broadcastMessage(ChatColor.AQUA + "[HG] " + ChatColor.RESET + String.format("Your kit is ready in %d seconds.", cooldown));
+    public static void kitCooldownMessage(Player player, int cooldown) {
+        player.sendMessage(ChatColor.AQUA + "[HG] " + ChatColor.RESET + String.format("Your kit is ready in %d seconds.", cooldown));
     }
 
     public static void breakAdjacentBlocks(Block block, Material material) {

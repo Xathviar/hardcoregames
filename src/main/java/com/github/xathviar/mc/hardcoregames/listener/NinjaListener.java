@@ -22,39 +22,30 @@ public class NinjaListener implements org.bukkit.event.Listener {
         } else if (event.isSneaking()) {
             final Player p = event.getPlayer();
             final Fighter f = HardCoreGame.getFighter(p);
-            if (f.getKit() == Kit.NINJA && f.getLastTarget() != null && f.getKitCooldown() == 0) {
-                Player e = f.getLastTarget().getPlayer();
-                if (e.isDead()) {
-                    f.setLastTarget(null);
+            if (f.getKit() == Kit.NINJA && f.getLastTarget() != null) {
+                if (f.getKitCooldown() == 0) {
+
+                    Player e = f.getLastTarget().getPlayer();
+                    if (e.isDead()) {
+                        f.setLastTarget(null);
+                    }
+                    double newX;
+                    double newZ;
+                    float nang = e.getLocation().getYaw() + 90;
+
+                    if (nang < 0) nang += 360;
+
+                    newX = Math.cos(Math.toRadians(nang));
+                    newZ = Math.sin(Math.toRadians(nang));
+
+                    Location newLocation = new Location(e.getLocation().getWorld(), e.getLocation().getX() - newX,
+                            e.getLocation().getY(), e.getLocation().getZ() - newZ, e.getLocation().getYaw(), e.getLocation().getPitch());
+                    p.teleport(newLocation);
+                    f.setKitCooldown(f.getKit().getKitCooldown());
+                } else if (f.getKitCooldown() != 0) {
+                    HelperClass.kitCooldownMessage(p, f.getKitCooldown());
                 }
-                double newX;
-                double newZ;
-                float nang = e.getLocation().getYaw() + 90;
-
-                if (nang < 0) nang += 360;
-
-                newX = Math.cos(Math.toRadians(nang));
-                newZ = Math.sin(Math.toRadians(nang));
-
-                Location newLocation = new Location(e.getLocation().getWorld(), e.getLocation().getX() - newX,
-                        e.getLocation().getY(), e.getLocation().getZ() - newZ, e.getLocation().getYaw(), e.getLocation().getPitch());
-
-                p.teleport(newLocation);
-                f.setKitCooldown(f.getKit().getKitCooldown());
-                f.setOnCooldown(true);
-                while (f.getKitCooldown() != 0) {
-                    Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
-                        @Override
-                        public void run() {
-                            f.reduceKitCooldown();
-                        }
-                    }, 20);
-                }
-                f.setOnCooldown(false);
-            } else if (f.getKitCooldown() != 0) {
-                HelperClass.kitCooldownMessage(f.getKitCooldown());
             }
-
         }
     }
 
