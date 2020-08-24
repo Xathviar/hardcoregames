@@ -53,6 +53,7 @@ public class NinjaListener implements org.bukkit.event.Listener {
             } else if (f.getKitCooldown() != 0) {
                 HelperClass.sendMessage(p, String.format("Kit ready in %d seconds.", f.getKitCooldown()));
             }
+
         }
     }
 
