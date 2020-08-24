@@ -45,7 +45,6 @@ public class Listener implements org.bukkit.event.Listener {
     }
 
 
-
     @EventHandler
     public void onFoodLevelChange(FoodLevelChangeEvent event) {
         if (!HardCoreGame.isRunning()) {
@@ -125,7 +124,8 @@ public class Listener implements org.bukkit.event.Listener {
                     || item == Material.WOOD_SWORD
                     || item == Material.IRON_SWORD
                     || item == Material.STONE_SWORD
-                    || item == Material.GOLD_SWORD) {
+                    || item == Material.GOLD_SWORD
+                    || item == Material.MUSHROOM_SOUP) {
                 event.setCancelled(true);
             }
         }

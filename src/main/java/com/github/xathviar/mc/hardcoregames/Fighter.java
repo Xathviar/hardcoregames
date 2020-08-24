@@ -49,7 +49,7 @@ public class Fighter {
     }
 
     public void reduceKitCooldown() {
-        if (kitCooldown >= 0) {
+        if (kitCooldown <= 0) {
             return;
         }
         kitCooldown--;
