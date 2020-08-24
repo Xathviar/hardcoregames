@@ -4,6 +4,7 @@ import com.github.xathviar.mc.hardcoregames.commands.KitSelector;
 import com.github.xathviar.mc.hardcoregames.commands.StartCommand;
 import com.github.xathviar.mc.hardcoregames.listener.AnchorListener;
 import com.github.xathviar.mc.hardcoregames.listener.Listener;
+import com.github.xathviar.mc.hardcoregames.listener.NinjaListener;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -26,6 +27,7 @@ public class Main extends JavaPlugin {
         new StartCommand(this);
         Bukkit.getServer().getPluginManager().registerEvents(new Listener(this), this);
         Bukkit.getServer().getPluginManager().registerEvents(new AnchorListener(this), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new NinjaListener(this), this);
         addRecipes();
     }
 

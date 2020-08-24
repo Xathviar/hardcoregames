@@ -1,7 +1,7 @@
 package com.github.xathviar.mc.hardcoregames;
 
 public enum Kit {
-    NINJA("ninja", 30),
+    NINJA("ninja", 600),
     STOMPER("stomper", 0),
     ANCHOR("anchor", 0),
     NOOB("noob", 0);

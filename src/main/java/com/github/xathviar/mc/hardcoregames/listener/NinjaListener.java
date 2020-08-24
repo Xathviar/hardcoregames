@@ -1,0 +1,42 @@
+package com.github.xathviar.mc.hardcoregames.listener;
+
+import com.github.xathviar.mc.hardcoregames.Fighter;
+import com.github.xathviar.mc.hardcoregames.HardCoreGame;
+import com.github.xathviar.mc.hardcoregames.Kit;
+import com.github.xathviar.mc.hardcoregames.Main;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerToggleSneakEvent;
+
+public class NinjaListener implements org.bukkit.event.Listener {
+    private Main main;
+
+    public NinjaListener(Main main) {
+        this.main = main;
+    }
+
+    @EventHandler
+    public void onPlayerToggleSneakEvent(PlayerToggleSneakEvent event) {
+        if (!HardCoreGame.isRunning()) {
+            event.setCancelled(true);
+        } else if (event.isSneaking()) {
+            final Player p = event.getPlayer();
+            final Fighter f = HardCoreGame.getFighter(p);
+            if (f.getKit() == Kit.NINJA && f.getLastTarget() != null && !f.isOnCooldown()) {
+                Player e = f.getLastTarget().getPlayer();
+                if (e.isDead()) {
+                    f.setLastTarget(null);
+                }
+                p.teleport(e.getLocation());
+                Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+                    @Override
+                    public void run() {
+                        f.setOnCooldown(true);
+                    }
+                }, f.getKit().getKitCooldown());
+                f.setOnCooldown(false);
+            }
+        }
+    }
+}
