@@ -1,12 +1,14 @@
 package com.github.xathviar.mc.hardcoregames.commands;
 
 import com.github.xathviar.mc.hardcoregames.*;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
+import org.bukkit.scoreboard.Scoreboard;
 
 
 public class KitSelector implements CommandExecutor {
@@ -29,11 +31,11 @@ public class KitSelector implements CommandExecutor {
                     Kit kit = Kit.getKitFromArguments(strings[0]);
                     if (kit != null) {
                         HardCoreGame.addPlayer(new Fighter(player, kit));
-                        HelperClass.sendMessage(player, "Your Kit " + strings[0] + " was saved!");
-                        Objective o = plugin.resetObjective((Player) commandSender);
-                        Score score = o.getScore("Kit: " + kit.name().toLowerCase());
-                        score.setScore(0);
-                        player.setScoreboard(plugin.getScoreboard(player));
+//                        HelperClass.sendMessage(player, "Your Kit " + strings[0] + " was saved!");
+//                        Scoreboard b = plugin.getScoreboard(player);
+//                        Objective o = plugin.getObjective(player);
+//                        o.setDisplayName("Kit: " + ChatColor.YELLOW + kit.name().toLowerCase());
+//                        player.setScoreboard(b);
                         return true;
                     } else {
                         HelperClass.sendMessage(player, "Please use one of these kits: " + Kit.getKitsAsList());

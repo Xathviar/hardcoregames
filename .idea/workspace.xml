@@ -24,28 +24,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="Fixed small bug...">
+    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="minor udpates">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Spigboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/SpigboardEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/AnchorListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Fighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HardCoreGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HardCoreGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HelperClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HelperClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Kit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Kit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hardcoregames.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hardcoregames.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/KitSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/KitSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HardCoreGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HardCoreGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HelperClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HelperClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Kit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Kit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Listener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/KitSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/KitSelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/StartCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/StartCommand.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,6 +61,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -80,7 +86,7 @@
       <updated>1598225647305</updated>
       <workItem from="1598225650919" duration="1626000" />
       <workItem from="1598267745179" duration="7913000" />
-      <workItem from="1598289314442" duration="4198000" />
+      <workItem from="1598289314442" duration="6584000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed small bug...">
       <created>1598225981524</created>
@@ -89,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598225981524</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="minor udpates">
+      <created>1598294888005</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598294888005</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,13 +122,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed small bug..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed small bug..." />
+    <MESSAGE value="minor udpates" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor udpates" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598270697326">
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598296934422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598270697326" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598296934422" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1598225692694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -124,9 +138,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598226900035" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1598275355741">
+    <state x="570" y="187" width="835" height="665" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598295138416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598275355741" />
+    <state x="570" y="187" width="835" height="665" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598295138416" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1598295179980">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598295179980" />
   </component>
 </project>

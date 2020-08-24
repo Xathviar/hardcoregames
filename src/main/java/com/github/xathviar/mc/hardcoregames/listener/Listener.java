@@ -1,5 +1,6 @@
-package com.github.xathviar.mc.hardcoregames;
+package com.github.xathviar.mc.hardcoregames.listener;
 
+import com.github.xathviar.mc.hardcoregames.*;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -40,18 +41,6 @@ public class Listener implements org.bukkit.event.Listener {
     public void onDamageEvent(EntityDamageEvent event) {
         if (!HardCoreGame.isRunning()) {
             event.setCancelled(true);
-        } else if (event.getEntity() instanceof Player) {
-            final Player p = (Player) event.getEntity();
-            Fighter f = HardCoreGame.getFighter(p);
-            if (f.getKit() == Kit.ANCHOR) {
-                Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
-                    @Override
-                    public void run() {
-                        p.playSound(p.getLocation(), Sound.ANVIL_LAND, 5, 0);
-                        p.setVelocity(new Vector(0, 0, 0));
-                    }
-                }, 1);
-            }
         }
     }
 
@@ -148,9 +137,7 @@ public class Listener implements org.bukkit.event.Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         HardCoreGame.addPlayer(new Fighter(event.getPlayer(), Kit.NOOB));
-        Objective o = main.addNewPlayer(event.getPlayer());
-        Score score = o.getScore("kit: noob");
-        score.setScore(0);
-        event.getPlayer().setScoreboard(main.getScoreboard(event.getPlayer()));
+        event.getPlayer().setScoreboard(main.addNewPlayer(event.getPlayer()));
+        System.out.println("Why does this not work???");
     }
 }
