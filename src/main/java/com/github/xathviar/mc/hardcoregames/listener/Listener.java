@@ -140,6 +140,6 @@ public class Listener implements org.bukkit.event.Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         HardCoreGame.addPlayer(new Fighter(event.getPlayer(), Kit.NOOB));
         event.getPlayer().setScoreboard(main.addNewPlayer(event.getPlayer()));
-        System.out.println("Why does this not work???");
+        HardCoreGame.soutFighters();
     }
 }

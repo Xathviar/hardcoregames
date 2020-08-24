@@ -7,6 +7,7 @@ import com.github.xathviar.mc.hardcoregames.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 public class NinjaListener implements org.bukkit.event.Listener {
@@ -38,5 +39,15 @@ public class NinjaListener implements org.bukkit.event.Listener {
                 f.setOnCooldown(false);
             }
         }
+    }
+
+    @EventHandler
+    public void onPlayerEntityHit(EntityDamageByEntityEvent event) {
+        try {
+            if (event.getDamager() instanceof Player
+                    && event.getEntity() instanceof Player && HardCoreGame.getFighter((Player) event.getDamager()).getKit() == Kit.NINJA) {
+                HardCoreGame.getFighter((Player) event.getDamager()).setLastTarget(HardCoreGame.getFighter((Player) event.getEntity()));
+            }
+        } catch (Exception ignored) {}
     }
 }

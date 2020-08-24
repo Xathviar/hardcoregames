@@ -24,21 +24,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="minor udpates">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Spigboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/SpigboardEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/AnchorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="Ninja and Anchor fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hardcoregames.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hardcoregames.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/KitSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/KitSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Listener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HardCoreGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HardCoreGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/AnchorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/AnchorListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/NinjaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/NinjaListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HardCoreGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HardCoreGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Kit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Kit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Listener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/KitSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/KitSelector.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,7 @@
       <updated>1598225647305</updated>
       <workItem from="1598225650919" duration="1626000" />
       <workItem from="1598267745179" duration="7913000" />
-      <workItem from="1598289314442" duration="6584000" />
+      <workItem from="1598289314442" duration="7847000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed small bug...">
       <created>1598225981524</created>
@@ -102,7 +98,21 @@
       <option name="project" value="LOCAL" />
       <updated>1598294888005</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="minor updates lol">
+      <created>1598297283359</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598297283359</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ninja and Anchor fix">
+      <created>1598297442469</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598297442469</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +133,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed small bug..." />
     <MESSAGE value="minor udpates" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor udpates" />
+    <MESSAGE value="minor updates lol" />
+    <MESSAGE value="Ninja and Anchor fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ninja and Anchor fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598296934422">
@@ -146,5 +158,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598295179980" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598297741522">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598297741522" />
   </component>
 </project>

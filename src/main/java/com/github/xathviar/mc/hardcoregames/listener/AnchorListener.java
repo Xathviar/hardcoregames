@@ -20,15 +20,12 @@ public class AnchorListener implements org.bukkit.event.Listener {
 
     @EventHandler
     public void anchorListener(EntityDamageByEntityEvent event) {
-        if (event.getEntity() instanceof Player) {
+        if (event.getEntity() instanceof Player && event.getDamager() instanceof Player) {
             final Player p = (Player) event.getEntity();
+            final Player d = (Player) event.getDamager();
             Fighter f = HardCoreGame.getFighter(p);
-            if (f.getKit() == Kit.ANCHOR) {
-                Bukkit.getScheduler().scheduleSyncDelayedTask(main, () -> {
-                    p.playSound(p.getLocation(), Sound.ANVIL_LAND, 5, 0);
-                    p.setVelocity(new Vector(0, 0, 0));
-                }, 1);
-            } else if (event.getDamager() instanceof Player && HardCoreGame.getFighter((Player) event.getDamager()).getKit() == Kit.ANCHOR) {
+            Fighter f2 = HardCoreGame.getFighter(d);
+            if (f.getKit() == Kit.ANCHOR || f2.getKit() == Kit.ANCHOR) {
                 Bukkit.getScheduler().scheduleSyncDelayedTask(main, () -> {
                     p.playSound(p.getLocation(), Sound.ANVIL_LAND, 5, 0);
                     p.setVelocity(new Vector(0, 0, 0));

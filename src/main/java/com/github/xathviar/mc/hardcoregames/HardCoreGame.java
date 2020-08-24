@@ -21,22 +21,14 @@ public class HardCoreGame {
 
     public synchronized static void addPlayer(Fighter fighter) {
         synchronized (fighters) {
-            for (Fighter fighter1 : fighters) {
-                if (fighter1.getPlayer().equals(fighter.getPlayer())) {
-                    fighters.remove(fighter1);
-                }
-            }
+            fighters.removeIf(fighter1 -> fighter1.getPlayer().equals(fighter.getPlayer()));
             fighters.add(fighter);
         }
     }
 
     public static void removePlayer(Player entity) {
         synchronized (fighters) {
-            for (Fighter fighter1 : fighters) {
-                if (fighter1.getPlayer().equals(entity)) {
-                    fighters.remove(fighter1);
-                }
-            }
+            fighters.removeIf(fighter1 -> fighter1.getPlayer().equals(entity));
         }
     }
 
@@ -52,5 +44,11 @@ public class HardCoreGame {
             }
         }
         return null;
+    }
+
+    public static void soutFighters() {
+        for (Fighter fighter : fighters) {
+            System.out.println(fighter.getPlayer().getDisplayName() + fighter.getKit().name().toLowerCase());
+        }
     }
 }
