@@ -35,6 +35,14 @@ public enum Kit {
         return s.toString();
     }
 
+    public int getKitCooldown() {
+        return kitCooldown;
+    }
+
+    public void setKitCooldown(int kitCooldown) {
+        this.kitCooldown = kitCooldown;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

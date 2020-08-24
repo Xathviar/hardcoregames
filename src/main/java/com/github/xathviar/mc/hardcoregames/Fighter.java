@@ -8,6 +8,7 @@ public class Fighter {
     private int kills;
     private int kitCooldown;
     private Fighter lastTarget;
+    private boolean onCooldown;
 
     public Fighter(Player player, Kit kit) {
         this.player = player;
@@ -25,5 +26,17 @@ public class Fighter {
 
     public Kit getKit() {
         return kit;
+    }
+
+    public Fighter getLastTarget() {
+        return lastTarget;
+    }
+
+    public boolean isOnCooldown() {
+        return onCooldown;
+    }
+
+    public void setOnCooldown(boolean onCooldown) {
+        this.onCooldown = onCooldown;
     }
 }
