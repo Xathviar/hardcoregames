@@ -6,6 +6,8 @@ public class Fighter {
     private Player player;
     private Kit kit;
     private int kills;
+    private int kitCooldown;
+    private Fighter lastTarget;
 
     public Fighter(Player player, Kit kit) {
         this.player = player;
@@ -15,5 +17,13 @@ public class Fighter {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public void setLastTarget(Fighter fighter) {
+        this.lastTarget = fighter;
+    }
+
+    public Kit getKit() {
+        return kit;
     }
 }

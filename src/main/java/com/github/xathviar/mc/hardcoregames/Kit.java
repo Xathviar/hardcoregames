@@ -1,14 +1,17 @@
 package com.github.xathviar.mc.hardcoregames;
 
 public enum Kit {
-    NINJA("ninja"),
-    STOMPER("stomper"),
-    ANCHOR("anchor");
+    NINJA("ninja", 30),
+    STOMPER("stomper", 0),
+    ANCHOR("anchor", 0),
+    NOOB("noob", 0);
 
-    String name;
+    private String name;
+    private int kitCooldown;
 
-    Kit(String name) {
+    Kit(String name, int kitCooldown) {
         this.name = name;
+        this.kitCooldown = kitCooldown;
     }
 
     public static Kit getKitFromArguments(String s) {

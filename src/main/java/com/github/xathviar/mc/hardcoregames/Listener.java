@@ -2,48 +2,56 @@ package com.github.xathviar.mc.hardcoregames;
 
 import org.bukkit.*;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.PlayerAchievementAwardedEvent;
-import org.bukkit.event.player.PlayerDropItemEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.event.world.ChunkPopulateEvent;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Score;
+import org.bukkit.scoreboard.ScoreboardManager;
+import org.bukkit.util.Vector;
 
 
 public class Listener implements org.bukkit.event.Listener {
+    private Main main;
+
+    public Listener(Main main) {
+        this.main = main;
+    }
 
     @EventHandler
     public void onBlockBreakEvent(BlockBreakEvent event) {
         if (!HardCoreGame.isRunning()) {
             event.setCancelled(true);
         } else if (event.getBlock().getType().equals(Material.RED_MUSHROOM)) {
-            breakAdjacentBlocks(event.getBlock(), Material.RED_MUSHROOM);
+            HelperClass.breakAdjacentBlocks(event.getBlock(), Material.RED_MUSHROOM);
         } else if (event.getBlock().getType().equals(Material.BROWN_MUSHROOM)) {
-            breakAdjacentBlocks(event.getBlock(), Material.BROWN_MUSHROOM);
+            HelperClass.breakAdjacentBlocks(event.getBlock(), Material.BROWN_MUSHROOM);
         }
     }
 
-    private void breakAdjacentBlocks(Block block, Material material) {
-        if (!block.getType().equals(material)) {
-            return;
-        }
-        Location l = block.getLocation();
-        World world = block.getWorld();
-        block.breakNaturally();
-        breakAdjacentBlocks(world.getBlockAt(l.getBlockX() - 1, l.getBlockY(), l.getBlockZ()), material);
-        breakAdjacentBlocks(world.getBlockAt(l.getBlockX() + 1, l.getBlockY(), l.getBlockZ()), material);
-        breakAdjacentBlocks(world.getBlockAt(l.getBlockX(), l.getBlockY(), l.getBlockZ() + 1), material);
-        breakAdjacentBlocks(world.getBlockAt(l.getBlockX(), l.getBlockY(), l.getBlockZ() - 1), material);
-    }
 
     @EventHandler
     public void onDamageEvent(EntityDamageEvent event) {
         if (!HardCoreGame.isRunning()) {
             event.setCancelled(true);
+        } else if (event.getEntity() instanceof Player) {
+            final Player p = (Player) event.getEntity();
+            Fighter f = HardCoreGame.getFighter(p);
+            if (f.getKit() == Kit.ANCHOR) {
+                Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+                    @Override
+                    public void run() {
+                        p.playSound(p.getLocation(), Sound.ANVIL_LAND, 5, 0);
+                        p.setVelocity(new Vector(0, 0, 0));
+                    }
+                }, 1);
+            }
         }
     }
 
@@ -59,7 +67,8 @@ public class Listener implements org.bukkit.event.Listener {
     public void soupHealing(PlayerInteractEvent event) {
         if (!HardCoreGame.isRunning()) {
             event.setCancelled(true);
-        } else if (event.getPlayer().getItemInHand().getType().equals(Material.MUSHROOM_SOUP) && event.getPlayer().getHealth() < 20) {
+        } else if (event.getPlayer().getItemInHand().getType().equals(Material.MUSHROOM_SOUP) && event.getPlayer().getHealth() < 20
+                && (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK)) {
             if (event.getPlayer().getHealth() >= 14) {
                 event.getPlayer().setHealth(20);
             } else {
@@ -119,11 +128,29 @@ public class Listener implements org.bukkit.event.Listener {
     public void onPlayerDrop(PlayerDropItemEvent event) {
         if (!HardCoreGame.isRunning()) {
             event.setCancelled(true);
+        } else if (HardCoreGame.getFighter(event.getPlayer()).getKit() == Kit.NOOB) {
+            Material item = event.getItemDrop().getItemStack().getType();
+            if (item == Material.DIAMOND_SWORD
+                    || item == Material.WOOD_SWORD
+                    || item == Material.IRON_SWORD
+                    || item == Material.STONE_SWORD
+                    || item == Material.GOLD_SWORD) {
+                event.setCancelled(true);
+            }
         }
     }
 
     @EventHandler
     public void achievement(PlayerAchievementAwardedEvent event) {
         event.setCancelled(true);
+    }
+
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        HardCoreGame.addPlayer(new Fighter(event.getPlayer(), Kit.NOOB));
+        Objective o = main.addNewPlayer(event.getPlayer());
+        Score score = o.getScore("kit: noob");
+        score.setScore(0);
+        event.getPlayer().setScoreboard(main.getScoreboard(event.getPlayer()));
     }
 }
