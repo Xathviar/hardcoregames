@@ -40,6 +40,7 @@ public class NinjaListener implements org.bukkit.event.Listener {
                         e.getLocation().getY(), e.getLocation().getZ() - newZ, e.getLocation().getYaw(), e.getLocation().getPitch());
 
                 p.teleport(newLocation);
+                f.setKitCooldown(f.getKit().getKitCooldown());
                 f.setOnCooldown(true);
                 while (f.getKitCooldown() != 0) {
                     Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
@@ -51,7 +52,7 @@ public class NinjaListener implements org.bukkit.event.Listener {
                 }
                 f.setOnCooldown(false);
             } else if (f.getKitCooldown() != 0) {
-                HelperClass.sendMessage(p, String.format("Kit ready in %d seconds.", f.getKitCooldown()));
+                HelperClass.kitCooldownMessage(f.getKitCooldown());
             }
 
         }
