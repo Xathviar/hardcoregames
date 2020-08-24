@@ -1,9 +1,6 @@
 package com.github.xathviar.mc.hardcoregames.listener;
 
-import com.github.xathviar.mc.hardcoregames.Fighter;
-import com.github.xathviar.mc.hardcoregames.HardCoreGame;
-import com.github.xathviar.mc.hardcoregames.Kit;
-import com.github.xathviar.mc.hardcoregames.Main;
+import com.github.xathviar.mc.hardcoregames.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -25,7 +22,7 @@ public class NinjaListener implements org.bukkit.event.Listener {
         } else if (event.isSneaking()) {
             final Player p = event.getPlayer();
             final Fighter f = HardCoreGame.getFighter(p);
-            if (f.getKit() == Kit.NINJA && f.getLastTarget() != null && !f.isOnCooldown()) {
+            if (f.getKit() == Kit.NINJA && f.getLastTarget() != null && f.getKitCooldown() == 0) {
                 Player e = f.getLastTarget().getPlayer();
                 if (e.isDead()) {
                     f.setLastTarget(null);
@@ -44,12 +41,17 @@ public class NinjaListener implements org.bukkit.event.Listener {
 
                 p.teleport(newLocation);
                 f.setOnCooldown(true);
-                Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
-                    @Override
-                    public void run() {
-                        f.setOnCooldown(false);
-                    }
-                }, f.getKit().getKitCooldown());
+                while (f.getKitCooldown() != 0) {
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(main, new Runnable() {
+                        @Override
+                        public void run() {
+                            f.reduceKitCooldown();
+                        }
+                    }, 20);
+                }
+                f.setOnCooldown(false);
+            } else if (f.getKitCooldown() != 0) {
+                HelperClass.sendMessage(p, String.format("Kit ready in %d seconds.", f.getKitCooldown()));
             }
         }
     }

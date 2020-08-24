@@ -39,4 +39,16 @@ public class Fighter {
     public void setOnCooldown(boolean onCooldown) {
         this.onCooldown = onCooldown;
     }
+
+    public int getKitCooldown() {
+        return kitCooldown;
+    }
+
+    public void setKitCooldown(int kitCooldown) {
+        this.kitCooldown = kitCooldown;
+    }
+
+    public void reduceKitCooldown() {
+        kitCooldown--;
+    }
 }
