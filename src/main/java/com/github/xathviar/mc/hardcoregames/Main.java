@@ -2,11 +2,7 @@ package com.github.xathviar.mc.hardcoregames;
 
 import com.github.xathviar.mc.hardcoregames.commands.KitSelector;
 import com.github.xathviar.mc.hardcoregames.commands.StartCommand;
-import com.github.xathviar.mc.hardcoregames.listener.AnchorListener;
-import com.github.xathviar.mc.hardcoregames.listener.Listener;
-import com.github.xathviar.mc.hardcoregames.listener.NinjaListener;
-import com.github.xathviar.mc.hardcoregames.listener.StomperListener;
-import net.minecraft.util.org.apache.commons.io.FileUtils;
+import com.github.xathviar.mc.hardcoregames.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,7 +11,6 @@ import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.Scoreboard;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +27,7 @@ public class Main extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new AnchorListener(this), this);
         Bukkit.getServer().getPluginManager().registerEvents(new NinjaListener(this), this);
         Bukkit.getServer().getPluginManager().registerEvents(new StomperListener(this), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new GladiatorListener(this), this);
         addRecipes();
     }
 
