@@ -38,7 +38,7 @@ public class GladiatorListener implements org.bukkit.event.Listener {
     }
 
     public void startFight(PlayerInteractEntityEvent event) {
-        System.out.println("Test");
+        HelperClass.broadcastMessage("Gladifight");
     }
 
     @EventHandler
