@@ -12,6 +12,8 @@ import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.event.world.ChunkPopulateEvent;
+import org.bukkit.event.world.WorldInitEvent;
+import org.bukkit.event.world.WorldUnloadEvent;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.ScoreboardManager;
@@ -83,9 +85,22 @@ public class Listener implements org.bukkit.event.Listener {
             event.getEntity().kickPlayer(event.getDeathMessage());
             HardCoreGame.removePlayer(event.getEntity());
             if (HardCoreGame.checkWin()) {
-                HelperClass.broadcastMessage(Bukkit.getOnlinePlayers()[0].getDisplayName() + " won!");
+                if (Bukkit.getOnlinePlayers().length > 0) {
+                    HelperClass.broadcastMessage(Bukkit.getOnlinePlayers()[0].getDisplayName() + " won!");
+                }
                 HardCoreGame.setIsRunning(false);
-                Bukkit.getServer().unloadWorld("world", false);
+                final int[] restartTimer = {10};
+                Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
+                    @Override
+                    public void run() {
+                        if (restartTimer[0] == 0) {
+                            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "restart");
+                        }
+                        restartTimer[0] -= 1;
+                        HelperClass.broadcastMessage("Restarting in " + restartTimer[0]);
+                    }
+                }, 20, 20);
+
             }
         }
     }
@@ -103,10 +118,10 @@ public class Listener implements org.bukkit.event.Listener {
                             || w.getBlockAt(x, y, z).getType() == Material.SAND
                             || w.getBlockAt(x, y, z).getType() == Material.GRASS)
                             && w.getBlockAt(x, y + 1, z).getType() == Material.AIR) {
-                        if (Math.random() < 0.125) {
-                            w.getBlockAt(x, y + 1, z).setType(Material.RED_MUSHROOM);
-                        } else if (Math.random() < 0.25) {
-                            w.getBlockAt(x, y + 1, z).setType(Material.BROWN_MUSHROOM);
+                        if (Math.random() < 0.0625) {
+                            w.getBlockAt(x, y + 1, z).setTypeId(Material.RED_MUSHROOM.getId(), false);
+                        } else if (Math.random() < 0.125) {
+                            w.getBlockAt(x, y + 1, z).setTypeId(Material.BROWN_MUSHROOM.getId(), false);
                         }
                     }
                 }
@@ -140,6 +155,5 @@ public class Listener implements org.bukkit.event.Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         HardCoreGame.addPlayer(new Fighter(event.getPlayer(), Kit.NOOB));
         event.getPlayer().setScoreboard(main.addNewPlayer(event.getPlayer()));
-        HardCoreGame.soutFighters();
     }
 }

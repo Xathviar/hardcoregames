@@ -6,6 +6,7 @@ import com.github.xathviar.mc.hardcoregames.listener.AnchorListener;
 import com.github.xathviar.mc.hardcoregames.listener.Listener;
 import com.github.xathviar.mc.hardcoregames.listener.NinjaListener;
 import com.github.xathviar.mc.hardcoregames.listener.StomperListener;
+import net.minecraft.util.org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -14,6 +15,7 @@ import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.Scoreboard;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,5 +54,4 @@ public class Main extends JavaPlugin {
         scoreboard.put(player, board);
         return board.getScoreboard();
     }
-
 }
