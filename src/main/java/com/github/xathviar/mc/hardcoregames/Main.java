@@ -50,5 +50,4 @@ public class Main extends JavaPlugin {
         scoreboard.put(player, board);
         return board.getScoreboard();
     }
-
 }

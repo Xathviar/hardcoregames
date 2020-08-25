@@ -24,12 +24,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="small fixes">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Fighter.java" afterDir="false" />
+    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="Ninja, stomper, Anchor, noob now working!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HelperClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/HelperClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/StartCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/commands/StartCommand.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,8 @@
       <workItem from="1598225650919" duration="1626000" />
       <workItem from="1598267745179" duration="7913000" />
       <workItem from="1598289314442" duration="9450000" />
-      <workItem from="1598303700777" duration="2002000" />
+      <workItem from="1598303700777" duration="2362000" />
+      <workItem from="1598363971256" duration="3776000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed small bug...">
       <created>1598225981524</created>
@@ -143,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598305556586</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ninja, stomper, Anchor, noob now working!">
+      <created>1598305729453</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1598305729453</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,13 +178,14 @@
     <MESSAGE value="Ninja fix" />
     <MESSAGE value="merge fix" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="Ninja, stomper, Anchor, noob now working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ninja, stomper, Anchor, noob now working!" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598299438416">
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598365438550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598299438416" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1598365438550" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1598225692694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
