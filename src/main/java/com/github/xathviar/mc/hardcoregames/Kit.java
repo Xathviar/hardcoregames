@@ -5,7 +5,7 @@ public enum Kit {
     STOMPER("stomper", 0),
     ANCHOR("anchor", 0),
     NOOB("noob", 0),
-    GLADIATOR("gladiator", 0);
+    GLADIATOR("gladiator", 60);
 
     private String name;
     private int kitCooldown;
