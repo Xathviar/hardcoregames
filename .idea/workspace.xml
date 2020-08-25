@@ -24,11 +24,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="Ninja, stomper, Anchor, noob now working!">
+    <list default="true" id="a90ed8cf-e08d-4c81-a7ff-4d2836c97392" name="Default Changelist" comment="World now working 100% Stable release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HardCoreGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/HardCoreGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/KitSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/KitSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/commands/StartCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/xathviar/mc/hardcoregames/listener/Listener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Fighter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/xathviar/mc/hardcoregames/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
       <workItem from="1598267745179" duration="7913000" />
       <workItem from="1598289314442" duration="9450000" />
       <workItem from="1598303700777" duration="2362000" />
-      <workItem from="1598363971256" duration="3776000" />
+      <workItem from="1598363971256" duration="6854000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed small bug...">
       <created>1598225981524</created>
@@ -150,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598305729453</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="World now working 100% Stable release">
+      <created>1598368115702</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598368115702</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +188,8 @@
     <MESSAGE value="merge fix" />
     <MESSAGE value="small fixes" />
     <MESSAGE value="Ninja, stomper, Anchor, noob now working!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ninja, stomper, Anchor, noob now working!" />
+    <MESSAGE value="World now working 100% Stable release" />
+    <option name="LAST_COMMIT_MESSAGE" value="World now working 100% Stable release" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1598365438550">

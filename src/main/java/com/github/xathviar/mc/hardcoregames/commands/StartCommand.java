@@ -31,6 +31,13 @@ public class StartCommand implements CommandExecutor {
                     }, 20, f.getKit().getKitCooldown());
                 }
             }
+            Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+                @Override
+                public void run() {
+                    HelperClass.broadcastMessage("Grace Period has been ended");
+                    HardCoreGame.setGracePeriod(false);
+                }
+            }, 150 * 20);
             return true;
         }
         return false;

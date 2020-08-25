@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -14,9 +15,7 @@ import org.bukkit.event.player.*;
 import org.bukkit.event.world.ChunkPopulateEvent;
 import org.bukkit.event.world.WorldInitEvent;
 import org.bukkit.event.world.WorldUnloadEvent;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Score;
-import org.bukkit.scoreboard.ScoreboardManager;
+import org.bukkit.scoreboard.*;
 import org.bukkit.util.Vector;
 
 
@@ -35,6 +34,14 @@ public class Listener implements org.bukkit.event.Listener {
             HelperClass.breakAdjacentBlocks(event.getBlock(), Material.RED_MUSHROOM);
         } else if (event.getBlock().getType().equals(Material.BROWN_MUSHROOM)) {
             HelperClass.breakAdjacentBlocks(event.getBlock(), Material.BROWN_MUSHROOM);
+        }
+    }
+
+    @EventHandler
+    public void onEntityAttack(EntityDamageByEntityEvent event) {
+        if (HardCoreGame.isGracePeriod() && event.getDamager() instanceof Player && event.getEntity() instanceof Player) {
+            event.setCancelled(true);
+            HelperClass.sendMessage((Player) event.getDamager(), "The Grace Period is not over yet!");
         }
     }
 
@@ -155,5 +162,17 @@ public class Listener implements org.bukkit.event.Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         HardCoreGame.addPlayer(new Fighter(event.getPlayer(), Kit.NOOB));
         event.getPlayer().setScoreboard(main.addNewPlayer(event.getPlayer()));
+        Location newLocation = event.getPlayer().getLocation();
+        newLocation.setY(200);
+        event.getPlayer().teleport(newLocation);
+        event.getPlayer().setSaturation(10);
+        ScoreboardManager manager = Bukkit.getScoreboardManager();
+        Scoreboard scoreboard = manager.getNewScoreboard();
+        Objective obj = scoreboard.registerNewObjective("test", "dummy");
+        obj.setDisplayName(ChatColor.WHITE + "Kit: " + ChatColor.YELLOW + "noob");
+        obj.setDisplaySlot(DisplaySlot.SIDEBAR);
+        Score s = obj.getScore(" ");
+        s.setScore(0);
+        event.getPlayer().setScoreboard(scoreboard);
     }
 }

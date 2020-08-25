@@ -32,10 +32,8 @@ public class KitSelector implements CommandExecutor {
                     if (kit != null) {
                         HardCoreGame.addPlayer(new Fighter(player, kit));
                         HelperClass.sendMessage(player, "Your Kit " + strings[0] + " was saved!");
-//                        Scoreboard b = plugin.getScoreboard(player);
-//                        Objective o = plugin.getObjective(player);
-//                        o.setDisplayName("Kit: " + ChatColor.YELLOW + kit.name().toLowerCase());
-//                        player.setScoreboard(b);
+                        Objective o = player.getScoreboard().getObjective("test");
+                        o.setDisplayName(ChatColor.WHITE + "Kit: " + ChatColor.YELLOW + kit.name().toLowerCase());
                         return true;
                     } else {
                         HelperClass.sendMessage(player, "Please use one of these kits: " + Kit.getKitsAsList());
