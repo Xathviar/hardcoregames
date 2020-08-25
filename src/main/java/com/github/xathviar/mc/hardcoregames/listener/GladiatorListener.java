@@ -29,8 +29,8 @@ public class GladiatorListener implements org.bukkit.event.Listener {
             if (f.getKitCooldown() == 0) {
                 if (event.getRightClicked().getType().equals(EntityType.PLAYER) && p.getItemInHand().getType() == Material.IRON_FENCE) {
                     startFight(event);
+                    f.setKitCooldown(f.getKit().getKitCooldown());
                 }
-                f.setKitCooldown(f.getKit().getKitCooldown());
             } else if (f.getKitCooldown() != 0) {
                 HelperClass.kitCooldownMessage(p, f.getKitCooldown());
             }
