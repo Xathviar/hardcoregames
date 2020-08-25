@@ -1,5 +1,6 @@
 package com.github.xathviar.mc.hardcoregames;
 
+import com.github.xathviar.mc.hardcoregames.KitHelper.GladiatorFight;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -7,6 +8,7 @@ import java.util.*;
 public class HardCoreGame {
     private static boolean isRunning = false;
     private static final List<Fighter> fighters = Collections.synchronizedList(new ArrayList<>());
+    private static final List<GladiatorFight> gladiatorFights = Collections.synchronizedList(new ArrayList<>());
 
     public static boolean isRunning() {
         return isRunning;
@@ -51,5 +53,16 @@ public class HardCoreGame {
 
     public static List<Fighter> getFighters() {
         return fighters;
+    }
+
+    public static List<GladiatorFight> getGladiatorFights() {
+        return gladiatorFights;
+    }
+
+    public static void removeGladiatorFight(Player entity) {
+        synchronized (gladiatorFights) {
+            gladiatorFights.removeIf(x -> x.getF1().getPlayer().equals(entity));
+            gladiatorFights.removeIf(x -> x.getF2().getPlayer().equals(entity));
+        }
     }
 }
