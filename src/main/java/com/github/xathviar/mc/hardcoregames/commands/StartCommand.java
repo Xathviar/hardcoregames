@@ -5,6 +5,7 @@ import com.wimbli.WorldBorder.BorderData;
 import com.wimbli.WorldBorder.Config;
 import me.confuser.barapi.BarAPI;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -45,8 +46,8 @@ public class StartCommand implements CommandExecutor {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 BarAPI.setMessage(onlinePlayer, "Grace Period", 150);
             }
-            BorderData border = Config.Border("world");
-
+            Location spawnPoint = ((Player) commandSender).getWorld().getSpawnLocation();
+            Config.setBorder("world", 500, spawnPoint.getBlockX(), spawnPoint.getBlockZ());
             return true;
         }
         return false;
