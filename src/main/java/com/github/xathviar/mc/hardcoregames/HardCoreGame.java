@@ -7,7 +7,7 @@ import java.util.*;
 
 public class HardCoreGame {
     private static boolean isRunning = false;
-    private static boolean gracePeriod = true;
+    private static int gracePeriod;
     private static final List<Fighter> fighters = Collections.synchronizedList(new ArrayList<>());
     private static final List<GladiatorFight> gladiatorFights = Collections.synchronizedList(new ArrayList<>());
 
@@ -68,10 +68,12 @@ public class HardCoreGame {
     }
 
     public static boolean isGracePeriod() {
-        return gracePeriod;
+        return gracePeriod > 0;
     }
 
-    public static void setGracePeriod(boolean b) {
-        gracePeriod = b;
+    public static void gracePeriodMinus() {
+        if (gracePeriod > 0) {
+            gracePeriod--;
+        }
     }
 }
