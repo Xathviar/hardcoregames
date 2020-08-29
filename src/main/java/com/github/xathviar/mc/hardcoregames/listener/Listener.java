@@ -66,15 +66,27 @@ public class Listener implements org.bukkit.event.Listener {
     public void soupHealing(PlayerInteractEvent event) {
         if (!HardCoreGame.isRunning()) {
             event.setCancelled(true);
-        } else if (event.getPlayer().getItemInHand().getType().equals(Material.MUSHROOM_SOUP) && event.getPlayer().getHealth() < 20
+        } else if (event.getPlayer().getItemInHand().getType().equals(Material.MUSHROOM_SOUP)
                 && (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK)) {
-            if (event.getPlayer().getHealth() >= 14) {
-                event.getPlayer().setHealth(20);
+            if (event.getPlayer().getHealth() == 20) {
+                if (event.getPlayer().getFoodLevel() == 20) {
+                    return;
+                }
+                if (event.getPlayer().getFoodLevel() >= 14) {
+                    event.getPlayer().setFoodLevel(20);
+                } else {
+                    event.getPlayer().setFoodLevel(event.getPlayer().getFoodLevel() + 6);
+                }
             } else {
-                event.getPlayer().setHealth(event.getPlayer().getHealth() + 6);
+                if (event.getPlayer().getHealth() >= 14) {
+                    event.getPlayer().setHealth(20);
+                } else {
+                    event.getPlayer().setHealth(event.getPlayer().getHealth() + 6);
+                }
             }
             event.getPlayer().getItemInHand().setType(Material.BOWL);
             event.setCancelled(true);
+
         }
     }
 

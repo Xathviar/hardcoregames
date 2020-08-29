@@ -4,6 +4,8 @@ import com.github.xathviar.mc.hardcoregames.HardCoreGame;
 import com.github.xathviar.mc.hardcoregames.HelperClass;
 import com.github.xathviar.mc.hardcoregames.Kit;
 import com.github.xathviar.mc.hardcoregames.Main;
+import com.mysql.jdbc.Buffer;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -24,6 +26,7 @@ public class StomperListener implements org.bukkit.event.Listener {
             if (event.getDamage() > 3) {
                 double damage = event.getDamage();
                 event.setDamage(3);
+                event.getEntity().getWorld().playSound(event.getEntity().getLocation(), Sound.ANVIL_LAND, 5, 0);
                 List<Player> players = HelperClass.getNearbyPlayers((Player) event.getEntity());
                 for (Player player : players) {
                     if (!player.isSneaking()) {
