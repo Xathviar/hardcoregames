@@ -1,6 +1,8 @@
 package com.github.xathviar.mc.hardcoregames.commands;
 
 import com.github.xathviar.mc.hardcoregames.*;
+import com.wimbli.WorldBorder.BorderData;
+import com.wimbli.WorldBorder.Config;
 import me.confuser.barapi.BarAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -43,6 +45,8 @@ public class StartCommand implements CommandExecutor {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 BarAPI.setMessage(onlinePlayer, "Grace Period", 150);
             }
+            BorderData border = Config.Border("world");
+
             return true;
         }
         return false;

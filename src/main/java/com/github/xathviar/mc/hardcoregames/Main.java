@@ -3,6 +3,8 @@ package com.github.xathviar.mc.hardcoregames;
 import com.github.xathviar.mc.hardcoregames.commands.KitSelector;
 import com.github.xathviar.mc.hardcoregames.commands.StartCommand;
 import com.github.xathviar.mc.hardcoregames.listener.*;
+import com.wimbli.WorldBorder.BorderData;
+import com.wimbli.WorldBorder.WorldBorder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -18,6 +20,7 @@ import java.util.Map;
 public class Main extends JavaPlugin {
 
     private Map<Player, Spigboard> scoreboard = Collections.synchronizedMap(new HashMap<Player, Spigboard>());
+
 
     @Override
     public void onEnable() {
