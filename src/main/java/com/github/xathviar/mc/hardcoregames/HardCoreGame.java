@@ -3,11 +3,13 @@ package com.github.xathviar.mc.hardcoregames;
 import com.github.xathviar.mc.hardcoregames.KitHelper.GladiatorFight;
 import org.bukkit.entity.Player;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class HardCoreGame {
     private static boolean isRunning = false;
-    private static int gracePeriod;
+    private static boolean gracePeriod = false;
     private static final List<Fighter> fighters = Collections.synchronizedList(new ArrayList<>());
     private static final List<GladiatorFight> gladiatorFights = Collections.synchronizedList(new ArrayList<>());
 
@@ -68,12 +70,11 @@ public class HardCoreGame {
     }
 
     public static boolean isGracePeriod() {
-        return gracePeriod > 0;
+        return gracePeriod;
     }
 
-    public static void gracePeriodMinus() {
-        if (gracePeriod > 0) {
-            gracePeriod--;
-        }
+    public static void setGracePeriod(boolean status) {
+        gracePeriod = status;
     }
+
 }

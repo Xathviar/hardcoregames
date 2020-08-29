@@ -1,6 +1,7 @@
 package com.github.xathviar.mc.hardcoregames.commands;
 
 import com.github.xathviar.mc.hardcoregames.*;
+import me.confuser.barapi.BarAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -31,13 +32,17 @@ public class StartCommand implements CommandExecutor {
                     }, 20, f.getKit().getKitCooldown());
                 }
             }
+            HardCoreGame.setGracePeriod(true);
             Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
                 @Override
                 public void run() {
-                    HelperClass.broadcastMessage("Grace Period has been ended");
+                    HelperClass.broadcastMessage("The Grace Period has ended!");
                     HardCoreGame.setGracePeriod(false);
                 }
             }, 150 * 20);
+            for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                BarAPI.setMessage(onlinePlayer, "Grace Period", 150);
+            }
             return true;
         }
         return false;
